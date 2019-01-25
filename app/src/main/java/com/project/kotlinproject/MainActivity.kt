@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         //Recycle the typed array
+
         image.recycle()
     }
 }

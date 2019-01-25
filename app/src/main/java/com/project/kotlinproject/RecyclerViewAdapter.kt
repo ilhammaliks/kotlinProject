@@ -11,6 +11,7 @@ import com.squareup.picasso.Picasso
 
 class RecyclerViewAdapter(private val context: Context, private val items: List<Item>) :
     RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_list, parent, false))
 
@@ -27,7 +28,9 @@ class RecyclerViewAdapter(private val context: Context, private val items: List<
 
         fun bindItem(items: Item) {
             name_club.text = items.name
-            items.image?.let { Picasso.get().load(it).into(logo_club) }
+            items.image?.let {
+                Picasso.get().load(it).fit().into(logo_club)
+            }
         }
     }
 
